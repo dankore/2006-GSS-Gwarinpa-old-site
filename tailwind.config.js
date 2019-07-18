@@ -129,7 +129,8 @@ module.exports = {
     opacity: ["responsive", "hover", "group-hover"],
     shadows: ["responsive", "hover", "focus"],
     textColors: ["responsive", "hover"],
-    textStyle: ["responsive", "hover", "focus"]
+    textStyle: ["responsive", "hover", "focus"],
+    float: ["responsive", "hover", "focus"]
   },
 
   plugins: []
