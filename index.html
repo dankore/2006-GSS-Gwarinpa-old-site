@@ -8,16 +8,16 @@
   </head>
 
   <body>
-    <div class="json-container bg-red-400"></div>
+    <div class="json-container w-3/4 flex flex-wrap m-4"></div>
 
     <script id="template" type="text/x-handlebars-template">
       {{#each set}}
-      	<div class="set">
+      	<div class="set max-w-sm rounded overflow-hidden shadow-lg m-4">
       		<div class="photo-column">
-      			<img src="{{photo}}">
+      			<img class="w-full" src="{{photo}}">
       		</div>
-      		<div class="info-column">
-      			<h2>{{name}} <span class="name-of-class">({{class}})</span></h2>
+      		<div class="info-column px-6 py-4">
+      			<div class="font-bold text-xl mb-2">{{name}} <span class="name-of-class text-gray-700 text-base">({{class}})</span></div>
 
       			{{#if state}}
       			<p><span class="bold">Lives in 🏡</span>: {{state}}</p>
