@@ -2,16 +2,30 @@
 
 const request = new XMLHttpRequest();
 
-request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
+request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json");
 
 request.onload = () => {
   const data = JSON.parse(request.responseText);
+
+  // sort by name
+  const sorted = data.set.sort(function(a, b) {
+    var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    // names must be equal
+    return 0;
+  });
+  console.log(sorted);
   render(data);
 };
 request.send();
 
 //Render JSON data to browser
-
 const render = myData => {
   const handleBarTemplate = document.querySelector("#template").innerHTML;
 
