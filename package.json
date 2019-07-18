@@ -1,7 +1,7 @@
 {
-  "name": "parcel-sandbox",
+  "name": "gss-gwarinpa-2006-set",
   "version": "1.0.0",
-  "description": "Simple Parcel Sandbox",
+  "description": "GSS Gwarinpa 2006 Set",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",

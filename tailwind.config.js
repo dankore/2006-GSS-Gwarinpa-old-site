@@ -56,6 +56,8 @@ module.exports = {
       "40": "10rem",
       "48": "12rem",
       "64": "16rem",
+      "72": "20rem",
+      "78": "24rem",
       "128": "32rem",
       "1/2": "50%",
       "1/3": "33.33333%",
@@ -80,13 +82,6 @@ module.exports = {
       full: "100%"
     },
     minHeight: {
-      "0": "0",
-      "1/4": "25%",
-      "1/2": "50%",
-      "3/4": "75%",
-      full: "100%"
-    },
-    maxnHeight: {
       "0": "0",
       "1/4": "25%",
       "1/2": "50%",
@@ -122,25 +117,19 @@ module.exports = {
   variants: {
     fontSize: ["responsive", "hover", "focus"],
     fontWeight: ["responsive", "hover", "focus", "active", "group-hover"],
-
     backgroundColors: ["responsive", "hover", "focus", "group-hover", "active"],
-
+    height: ["responsive", "hover", "focus"],
+    width: ["responsive", "hover", "focus", "group-hover", "active"],
+    minHeight: ["responsive", "hover", "focus", "group-hover", "active"],
+    maxHeight: ["responsive", "hover", "focus", "group-hover", "active"],
+    minWidth: ["responsive", "hover", "focus", "group-hover", "active"],
+    maxWidth: ["responsive", "hover", "focus", "group-hover", "active"],
     borderColors: ["responsive", "hover", "active", "focus"],
-
     flex: ["responsive", "hover", "focus"],
-
     opacity: ["responsive", "hover", "group-hover"],
-
     shadows: ["responsive", "hover", "focus"],
-
     textColors: ["responsive", "hover"],
-
     textStyle: ["responsive", "hover", "focus"]
-  },
-  options: {
-    prefix: "",
-    important: false,
-    separator: ":"
   },
 
   plugins: []
