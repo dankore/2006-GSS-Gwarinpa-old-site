@@ -9,6 +9,40 @@
   <body>
     <div class="json-container bg-red-400"></div>
 
+    <script id="template" type="text/x-handlebars-template">
+      {{#each set}}
+      	<div class="set">
+      		<div class="photo-column">
+      			<img src="{{photo}}">
+      		</div>
+      		<div class="info-column">
+      			<h2>{{name}} <span class="name-of-class">({{class}})</span></h2>
+
+      			{{#if state}}
+      			<p><span class="bold">Lives in 🏡</span>: {{state}}</p>
+      			{{else}}
+      			<p><span class="bold">Lives in 🏡</span>: Unknown</p>
+      			{{/if}}
+
+      			{{#if occupation}}
+      			<p><span class="bold">Occupation 👷‍♀:</span> {{occupation}}</p>
+      			{{else}}
+      			<p><span class="bold">Occupation 👷‍♀:</span> Unknown</p>
+      			{{/if}}
+
+      			{{#if dob}}
+      			<p>
+      				<span class="bold">Date of birth 📅:</span> {{dob}}
+      				<span class="design-by">[{{calculateUntillBirthDay dob}}]</span>
+      			</p>
+      			{{else}}
+      			<p><span class="bold">Date of birth 📅:</span> Unknown</p>
+      			{{/if}}
+      		</div>
+      	</div>
+      {{/each}}
+    </script>
+
     <script src="src/index.js"></script>
   </body>
 </html>
