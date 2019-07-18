@@ -8,36 +8,56 @@
   </head>
 
   <body>
+    <div class="socials bg-green-700">
+      <div class="socials-sub flex w-5/6 m-auto justify-between items-center">
+        <img class="w-24 h-24" src="./static/gss.png" />
+        <a href="https://chat.whatsapp.com/invite/HBsEAfla1Ws4cMWMmF2s7y"
+          ><img src="./static/whatsapp.svg"
+        /></a>
+      </div>
+    </div>
+    <div class="text-center my-6">
+      <div class="text-3xl font-bold">
+        2006 GSS Gwarinpa Set
+        <span class="text-sm text-gray-500"
+          >Web design by
+          <a class="hover:underline" href="https://homeawayfromhome.online"
+            >Adamu</a
+          ></span
+        >
+      </div>
+    </div>
+
     <div class="json-container w-5/6 m-auto flex flex-wrap m-4"></div>
 
     <script id="template" type="text/x-handlebars-template">
       {{#each set}}
       	<div class="set max-w-sm rounded overflow-hidden shadow-lg m-4">
       		<div class="photo-column">
-      			<img class="border border-grey h-78 w-full  object-cover rounded" src="{{photo}}">
+      			<img class="border border-grey h-78 w-full object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
       		<div class="info-column px-6 py-4">
-      			<div class="font-bold text-xl mb-2">{{name}} <span class="name-of-class text-gray-700 text-base">({{class}})</span></div>
+      			<div class="font-bold text-xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
 
       			{{#if state}}
-      			<p><span class="bold">Lives in 🏡</span>: {{state}}</p>
+      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: {{state}}</p>
       			{{else}}
-      			<p><span class="bold">Lives in 🏡</span>: Unknown</p>
+      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: Unknown</p>
       			{{/if}}
 
       			{{#if occupation}}
-      			<p><span class="bold">Occupation 👷‍♀:</span> {{occupation}}</p>
+      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> {{occupation}}</p>
       			{{else}}
-      			<p><span class="bold">Occupation 👷‍♀:</span> Unknown</p>
+      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> Unknown</p>
       			{{/if}}
 
       			{{#if dob}}
       			<p>
-      				<span class="bold">Date of birth 📅:</span> {{dob}}
-      				<span class="design-by">[{{calculateUntillBirthDay dob}}]</span>
+      				<span class="font-bold">Date of birth 📅:</span> {{dob}}
+      				<p class="text-sm text-center mt-2 text-gray-600">[{{calculateUntillBirthDay dob}}]</p>
       			</p>
       			{{else}}
-      			<p><span class="bold">Date of birth 📅:</span> Unknown</p>
+      			<p><span class="font-bold">Date of birth 📅:</span> Unknown</p>
       			{{/if}}
       		</div>
       	</div>
