@@ -27,14 +27,14 @@ request.onload = () => {
   //START(search): Get data from JSON file for search
 };
 request.send();
-
 //CONTINUE(search): Create the search method
-function findMatches(word, storeDataInArray) {
-  storeDataInArray.filter(item => {
+const findMatches = (word, storeSearchContainer) => {
+  return storeDataInArray.filter(item => {
     const regex = new RegExp(word, "gi");
     return item.name.match(regex) || item.state.match(regex);
   });
-}
+};
+
 //CONTINUE(search): Display matches
 const displayContainer = document.querySelector("#search-display");
 
