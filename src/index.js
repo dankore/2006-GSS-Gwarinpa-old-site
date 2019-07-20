@@ -48,17 +48,17 @@ function displayMatches() {
 
         const name = item.name.replace(
           regex,
-          `<span class="hl">${this.value}</span>`
+          `<span class="underline">${this.value}</span>`
         );
         const classOf = item.class.replace(
           regex,
-          `<span class="hl">${this.value}</span>`
+          `<span class="underline">${this.value}</span>`
         );
 
         return `
       <ul>
-        <li>
-          <p class="returnedSearch"> ${name}, ${classOf} </p>
+        <li  class="mt-4">
+        ${name}, ${classOf}
         </li>
       </ul>
       `;
