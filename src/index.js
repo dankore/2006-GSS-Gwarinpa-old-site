@@ -1,17 +1,31 @@
-// import Handlebars from "handlebars";
+const searchDisplayContainer = [];
 
 const request = new XMLHttpRequest();
 
-request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
+request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json");
 
 request.onload = () => {
   const data = JSON.parse(request.responseText);
+
+  // sort by name
+  const sorted = data.set.sort(function(a, b) {
+    var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    // names must be equal
+    return 0;
+  });
   render(data);
+  searchDisplayContainer.push(...data.set);
 };
 request.send();
 
 //Render JSON data to browser
-
 const render = myData => {
   const handleBarTemplate = document.querySelector("#template").innerHTML;
 
@@ -73,3 +87,46 @@ Handlebars.registerHelper("calculateUntillBirthDay", dob => {
     return daysRemaining + " days to birthday";
   }
 });
+
+// Display search
+const input = document.querySelector("#input-search");
+const searchDisplay = document.querySelector("#search-display");
+input.addEventListener("input", displayMatches);
+
+const findMatches = (word, searchDisplayContainer) => {
+  return searchDisplayContainer.filter(searchedItem => {
+    const regex = new RegExp(word, "gi");
+    return searchedItem.name.match(regex) || searchedItem.state.match(regex);
+  });
+};
+
+function displayMatches() {
+  if (input.value === "") {
+    searchDisplay.innerHTML = ` `;
+  } else {
+    const matchArray = findMatches(this.value, searchDisplayContainer);
+
+    const html = matchArray
+      .map(item => {
+        const regex = new RegExp(this.value, "gi");
+        const name = item.name.replace(
+          regex,
+          `<span class="hl">${this.value}</span>`
+        );
+        const classOf = item.class.replace(
+          regex,
+          `<span class="hl">${this.value}</span>`
+        );
+
+        return `
+      <ul>
+          <li>
+           <p class="returnedSearch"> ${name}, ${classOf} </p>
+          </li>
+      </ul>
+      `;
+      })
+      .join("");
+    searchDisplay.innerHTML = html;
+  }
+}
