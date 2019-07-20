@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="max-w-6xl m-auto bg-red-100">
+    <div class="w-11/12 m-auto">
     <div class="text-center my-6">
       <div class="text-3xl font-bold">
         2006 GSS Gwarinpa Set
@@ -30,7 +30,7 @@
       </div>
 		</div>
 		<form class="form">
-        <div class="input-cancel-button flex relative">
+        <div class="input-cancel-button flex">
 					<input type="text" id="search" class="h-24 shadow text-center appearance-none border rounded w-full text-gray-700 text-2xl leading-tight focus:outline-none focus:shadow-outline" placeholder="Look up names">			
 				</input>
 				<!-- <button class="clear-icon text-5xl absolute hidden bg-yellow-400 px-2" type="reset">X</button> -->
@@ -44,32 +44,32 @@
 
     <script id="template" type="text/x-handlebars-template">
       {{#each set}}
-      	<div class="set flex flex-wrap leading-normal w-full lg:max-w-md bg-white rounded shadow-md mx-auto m-4">
+      	<div class="set flex flex-wrap leading-normal lg:max-w-lg bg-white rounded shadow-md mx-auto m-4">
       		<div class="photo-column">
-      			<img class="object-contain w-xl" title="{{name}}" src="{{photo}}">
+      			<img class="min-w-full w-xl lg:w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
-      		<div class="info-column px-6 py-4">
-      			<div class="font-bold text-xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
+      		<div class="info-column text-5xl md:text-3xl px-6 py-4">
+      			<div class="font-bold text-5xl md:text-3xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
 
       			{{#if state}}
-      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: {{state}}</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Lives in 🏡</span>: {{state}}</p>
       			{{else}}
-      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Lives in 🏡</span>: Unknown</p>
       			{{/if}}
 
       			{{#if occupation}}
-      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> {{occupation}}</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Occupation 👷‍♀:</span> {{occupation}}</p>
       			{{else}}
-      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Occupation 👷‍♀:</span> Unknown</p>
       			{{/if}}
 
       			{{#if dob}}
-      			<p>
+      			<p class="mb-3 text-3xl md:text-2xl">
       				<span class="font-bold">Date of birth 📅:</span> {{dob}}
-      				<p class="text-sm text-center mt-2 text-gray-600">[{{calculateUntillBirthDay dob}}]</p>
+      				<p class="text-sm text-3xl md:text-2xl text-center mt-2 text-gray-600">[{{calculateUntillBirthDay dob}}]</p>
       			</p>
       			{{else}}
-      			<p><span class="font-bold">Date of birth 📅:</span> Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Date of birth 📅:</span> Unknown</p>
       			{{/if}}
       		</div>
       	</div>
