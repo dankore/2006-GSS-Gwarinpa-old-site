@@ -3,6 +3,7 @@
   <head>
     <title>GSS Gwarinpa 2006 Set</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="src/styles.css" />
     <!-- <link rel="stylesheet" href="./global.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
@@ -18,7 +19,7 @@
       </div>
     </div>
 
-    <div class="lg:w-4/5 m-auto">
+    <div class="w-4/5 m-auto">
     <div class="text-center my-6">
       <div class="text-3xl font-bold">
         2006 GSS Gwarinpa Set
@@ -30,7 +31,7 @@
         >
       </div>
 		</div>
-		<form class="form relative max-w-lg m-auto">
+		<form class="form relative">
         <div class="input-cancel-button flex">
 					<input id="search" class="text-4 bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
         </input>
@@ -61,7 +62,7 @@
       {{#each set}}
       	<div class="set flex flex-wrap leading-normal lg:max-w-lg bg-white rounded shadow-md mx-auto m-4">
       		<div class="photo-column">
-      			<img class="min-w-full w-xl lg:w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
+      			<img class="w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
       		<div class="info-column text-5xl md:text-3xl px-6 py-4">
       			<div class="font-bold text-5xl md:text-3xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
