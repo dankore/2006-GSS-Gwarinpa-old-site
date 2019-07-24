@@ -57,7 +57,7 @@ function displayMatches() {
 
         return `
       <ul>
-        <li  class="mt-4">
+        <li  class="my-4">
         ${name}, ${classOf}
         </li>
       </ul>

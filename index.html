@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
   </head>
 
-  <body>
+  <body class="bg-gray-200">
     <div class="socials bg-green-700">
       <div class="socials-sub flex w-5/6 m-auto justify-between items-center">
         <img class="w-24 h-24" src="./static/gss.png" />
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="w-11/12 m-auto">
+    <div class="w-11/12 lg:w-4/5 m-auto">
     <div class="text-center my-6">
       <div class="text-3xl font-bold">
         2006 GSS Gwarinpa Set
@@ -30,26 +30,28 @@
         >
       </div>
 		</div>
-		<form class="form">
+		<form class="form relative">
         <div class="input-cancel-button flex">
-					<input type="text" id="search" class="h-24 shadow text-center appearance-none border rounded w-full text-gray-700 text-2xl leading-tight focus:outline-none focus:shadow-outline" placeholder="Look up names">			
+					<input id="search" class="transition bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" style="vertical-align: top;" dir="auto">			
         </input>
         
         <button class="x-icon px-2" 
-        style="border: 1px solid transparent;
-        display: inline-block;
-        outline: 0;
-        cursor: pointer;
-        margin-left: -55px;
-        font-size: 60px;
-        display: none;
+        style="
+          border: 1px solid transparent;
+          display: inline-block;
+          outline: 0;
+          cursor: pointer;
+          margin-left: -55px;
+          font-size: 50px;
+          display: none;
         " 
         type="reset">X</button>
-       
-       
           <button class="cancel-button text-2xl hidden bg-transparent px-3">Cancel</button>
         </div>
-        <div id="search-display" class="shadow-lg pl-3"></div>
+        <div id="search-display" class="bg-white pl-4 absolute w-full rounded mt-2" ></div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+          <svg class="fill-current pointer-events-none text-gray-600 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
+        </div>
       </form>
 
     <div class="json-container flex flex-wrap"></div>
