@@ -152,6 +152,7 @@ cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
 const displayCancelButton = () => {
   if (input.value === "") {
     cancelButton.classList.add("hidden");
+    xIcon.style.display = "none";
   } else {
     xIcon.style.display = "block";
     cancelButton.classList.remove("hidden");
