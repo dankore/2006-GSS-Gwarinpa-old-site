@@ -134,3 +134,15 @@ Handlebars.registerHelper("calculateUntillBirthDay", dob => {
   }
 });
 //ENDS: Calculate days till birthday
+
+// Cancel button
+
+const cancelButton = document.querySelector(".cancel-button");
+
+const emptyInputBox = e => {
+  e.preventDefault();
+  input.value = "";
+  console.log(input.value);
+
+};
+cancelButton.addEventListener("click", emptyInputBox);
