@@ -137,7 +137,8 @@ module.exports = {
     shadows: ["responsive", "hover", "focus"],
     textColors: ["responsive", "hover"],
     textStyle: ["responsive", "hover", "focus"],
-    float: ["responsive", "hover", "focus"]
+    float: ["responsive", "hover", "focus"],
+    display: ["responsive", "hover", "focus"]
   },
 
   plugins: []

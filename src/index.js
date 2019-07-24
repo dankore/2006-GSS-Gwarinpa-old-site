@@ -145,3 +145,15 @@ const emptyInputBoxAndDisplayContainer = e => {
   displayContainer.innerHTML = "";
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
+
+// Display cancel button upon fucus
+
+const displayCancelButton = () => {
+  if (input.value === "") {
+    cancelButton.classList.add("hidden");
+  } else {
+    cancelButton.classList.remove("hidden");
+    cancelButton.classList.add("block");
+  }
+};
+input.addEventListener("input", displayCancelButton);
