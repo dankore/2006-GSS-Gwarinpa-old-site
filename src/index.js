@@ -143,6 +143,7 @@ const emptyInputBoxAndDisplayContainer = e => {
   e.preventDefault();
   input.value = "";
   displayContainer.innerHTML = "";
+  cancelButton.classList.add("hidden")
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
 
