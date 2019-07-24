@@ -143,18 +143,24 @@ const emptyInputBoxAndDisplayContainer = e => {
   e.preventDefault();
   input.value = "";
   displayContainer.innerHTML = "";
-  cancelButton.classList.add("hidden")
+  cancelButton.classList.add("hidden");
+  xIcon.style.display = "none";
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
 
-// Display cancel button upon fucus
-
+// Display cancel button and toggle it
 const displayCancelButton = () => {
   if (input.value === "") {
     cancelButton.classList.add("hidden");
   } else {
+    xIcon.style.display = "block";
     cancelButton.classList.remove("hidden");
     cancelButton.classList.add("block");
   }
 };
 input.addEventListener("input", displayCancelButton);
+
+// Clear button
+const xIcon = document.querySelector(".x-icon");
+
+xIcon.addEventListener("click", () => (xIcon.style.display = "none"));

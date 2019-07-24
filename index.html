@@ -4,6 +4,7 @@
     <title>GSS Gwarinpa 2006 Set</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/styles.css" />
+    <!-- <link rel="stylesheet" href="./global.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
   </head>
 
@@ -32,8 +33,20 @@
 		<form class="form">
         <div class="input-cancel-button flex">
 					<input type="text" id="search" class="h-24 shadow text-center appearance-none border rounded w-full text-gray-700 text-2xl leading-tight focus:outline-none focus:shadow-outline" placeholder="Look up names">			
-				</input>
-				<!-- <button class="clear-icon text-5xl absolute bg-yellow-400 px-2" type="reset">X</button> -->
+        </input>
+        
+        <button class="x-icon px-2" 
+        style="border: 1px solid transparent;
+        display: inline-block;
+        outline: 0;
+        cursor: pointer;
+        margin-left: -55px;
+        font-size: 60px;
+        display: none;
+        " 
+        type="reset">X</button>
+       
+       
           <button class="cancel-button text-2xl hidden bg-transparent px-3">Cancel</button>
         </div>
         <div id="search-display" class="shadow-lg pl-3"></div>
