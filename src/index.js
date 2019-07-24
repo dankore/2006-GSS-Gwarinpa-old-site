@@ -139,10 +139,9 @@ Handlebars.registerHelper("calculateUntillBirthDay", dob => {
 
 const cancelButton = document.querySelector(".cancel-button");
 
-const emptyInputBox = e => {
+const emptyInputBoxAndDisplayContainer = e => {
   e.preventDefault();
   input.value = "";
-  console.log(input.value);
-
+  displayContainer.innerHTML = "";
 };
-cancelButton.addEventListener("click", emptyInputBox);
+cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
