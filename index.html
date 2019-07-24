@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="src/styles.css" />
     <meta name="viewport" content="user-scalable=no" />
-    <!-- <link rel="stylesheet" href="./global.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
   </head>
 
@@ -19,7 +18,7 @@
       </div>
     </div>
 
-    <div class="w-4/5 m-auto">
+    <div class="w-11/12 lg:w-4/5 m-auto">
     <div class="text-center my-6">
       <div class="text-3xl font-bold">
         2006 GSS Gwarinpa Set
@@ -33,7 +32,7 @@
 		</div>
 		<form class="form relative">
         <div class="input-cancel-button flex">
-					<input id="search" class="w-full text-center" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
+					<input id="search" class="transition text-4 bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
         </input>
         
         <button class="x-icon px-2" 
@@ -43,15 +42,16 @@
           outline: 0;
           cursor: pointer;
           margin-left: -55px;
+          font-size: 50px;
           display: none;
         " 
         type="reset">X</button>
           <button class="cancel-button text-2xl hidden bg-transparent px-3">Cancel</button>
         </div>
         <div id="search-display" class="bg-white pl-4 absolute w-full rounded mt-2" ></div>
-        <!--<div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
           <svg class="fill-current pointer-events-none text-gray-600 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
-        </div>-->
+        </div>
       </form>
 
     <div class="json-container flex flex-wrap"></div>
@@ -61,30 +61,30 @@
       {{#each set}}
       	<div class="set flex flex-wrap leading-normal lg:max-w-lg bg-white rounded shadow-md mx-auto m-4">
       		<div class="photo-column">
-      			<img class="w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
+      			<img class="min-w-full w-xl lg:w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
-      		<div class="info-column px-6 py-4">
-      			<div class="font-bold mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
+      		<div class="info-column text-5xl md:text-3xl px-6 py-4">
+      			<div class="font-bold text-5xl md:text-3xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
 
       			{{#if state}}
-      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: {{state}}</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Lives in 🏡</span>: {{state}}</p>
       			{{else}}
-      			<p class="mb-3"><span class="font-bold">Lives in 🏡</span>: Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Lives in 🏡</span>: Unknown</p>
       			{{/if}}
 
       			{{#if occupation}}
-      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> {{occupation}}</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Occupation 👷‍♀:</span> {{occupation}}</p>
       			{{else}}
-      			<p class="mb-3"><span class="font-bold">Occupation 👷‍♀:</span> Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Occupation 👷‍♀:</span> Unknown</p>
       			{{/if}}
 
       			{{#if dob}}
-      			<p class="mb-3">
+      			<p class="mb-3 text-3xl md:text-2xl">
       				<span class="font-bold">Date of birth 📅:</span> {{dob}}
-      				<p class="text-sm  text-center mt-2 text-gray-600">[{{calculateUntillBirthDay dob}}]</p>
+      				<p class="text-sm text-3xl md:text-2xl text-center mt-2 text-gray-600">[{{calculateUntillBirthDay dob}}]</p>
       			</p>
       			{{else}}
-      			<p class="mb-3"><span class="font-bold">Date of birth 📅:</span> Unknown</p>
+      			<p class="mb-3 text-3xl md:text-2xl"><span class="font-bold">Date of birth 📅:</span> Unknown</p>
       			{{/if}}
       		</div>
       	</div>
