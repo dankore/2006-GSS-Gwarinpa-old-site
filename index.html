@@ -32,7 +32,7 @@
 		</div>
 		<form class="form relative">
         <div class="input-cancel-button flex">
-					<input id="search" class="text-4 bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
+					<input id="search" class="w-full" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
         </input>
         
         <button class="x-icon px-2" 
@@ -42,16 +42,15 @@
           outline: 0;
           cursor: pointer;
           margin-left: -55px;
-          font-size: 50px;
           display: none;
         " 
         type="reset">X</button>
           <button class="cancel-button text-2xl hidden bg-transparent px-3">Cancel</button>
         </div>
         <div id="search-display" class="bg-white pl-4 absolute w-full rounded mt-2" ></div>
-        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+        <!--<div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
           <svg class="fill-current pointer-events-none text-gray-600 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
-        </div>
+        </div>-->
       </form>
 
     <div class="json-container flex flex-wrap"></div>
