@@ -52,7 +52,7 @@ function displayMatches() {
 
         const name = item.name.replace(
           regex,
-          `<span class="underline">${this.value}</span>`
+          `<span class="underline text-red-400">${this.value}</span>`
         );
         const classOf = item.class.replace(
           regex,
@@ -64,6 +64,7 @@ function displayMatches() {
         <li  class="my-4">
         ${name}, ${classOf}
         </li>
+        <hr class="border-b border-gray-200"/>
       </ul>
       `;
       })

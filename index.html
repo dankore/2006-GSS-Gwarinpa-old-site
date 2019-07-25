@@ -11,8 +11,8 @@
   <body class="bg-gray-200">
     <div class="inset-x-0 top-0 border-b-2 border-gray-200 lg:border-b-0 lg:static bg-green-700">
     <div class="w-full w-11/12 lg:w-2xl mx-auto">
-      <div class="flex content-between w-5/6 m-auto items-center ">
-        <img class="w-24 h-24 -ml-16" src="./static/gss.png" />
+      <div class="flex content-between w-5/6 m-auto items-center">
+        <img class="gss w-24 h-24 -ml-16" src="./static/gss.png"/>
         <form class="form relative w-full mx-4">
         <div class="input-cancel-button flex">
 					<input id="search" class="transition text-4 bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
@@ -27,16 +27,16 @@
           margin-left: -55px;
           font-size: 50px;
           display: none;
+          color: red;
         " 
         type="reset">X</button>
-          <button class="cancel-button text-2xl hidden bg-transparent px-3">Cancel</button>
+          <button class="cancel-button text-2xl hidden bg-transparent text-white px-3">Cancel</button>
         </div>
-        <div id="search-display" class="bg-white pl-4 absolute w-full rounded mt-2" ></div>
         <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
           <svg class="fill-current pointer-events-none text-gray-600 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
         </div>
       </form>
-      <div class="-mr-16">
+      <div class="whatsapp -mr-16">
         <a href="https://chat.whatsapp.com/invite/HBsEAfla1Ws4cMWMmF2s7y"
           ><img src="./static/whatsapp.svg"
         /></a>
@@ -44,6 +44,8 @@
       </div>
     </div>
     </div>
+    <div id="search-display" class="bg-white h-full pl-4 absolute w-full rounded-lg text-3xl" ></div>
+
 
     <div class="w-11/12 lg:w-2xl m-auto">
     <div class="text-center my-6">
@@ -56,7 +58,7 @@
           ></span
         >
       </div>
-      <div class="birth-day-display"></div>
+      <!-- <div class="birth-day-display"></div> -->
 		</div>
 		
 
