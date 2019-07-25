@@ -143,14 +143,13 @@ Handlebars.registerHelper("calculateUntillBirthDay", dob => {
 //ENDS: Calculate days till birthday
 
 // Cancel button
-
 const cancelButton = document.querySelector(".cancel-button");
 
 const emptyInputBoxAndDisplayContainer = e => {
   e.preventDefault();
   input.value = "";
   displayContainer.innerHTML = "";
-  cancelButton.classList.add("hidden");
+  displayContainer.classList.add("hidden");
   xIcon.style.display = "none";
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
@@ -160,10 +159,12 @@ const displayCancelButton = () => {
   if (input.value === "") {
     cancelButton.classList.add("hidden");
     xIcon.style.display = "none";
+    displayContainer.classList.add("hidden");
   } else {
     xIcon.style.display = "block";
     cancelButton.classList.remove("hidden");
     cancelButton.classList.add("block");
+    displayContainer.classList.remove("hidden");
   }
 };
 input.addEventListener("input", displayCancelButton);
