@@ -9,28 +9,11 @@
   </head>
 
   <body class="bg-gray-200">
-    <div class="socials bg-green-700">
-      <div class="socials-sub flex w-5/6 m-auto justify-between items-center">
-        <img class="w-24 h-24" src="./static/gss.png" />
-        <a href="https://chat.whatsapp.com/invite/HBsEAfla1Ws4cMWMmF2s7y"
-          ><img src="./static/whatsapp.svg"
-        /></a>
-      </div>
-    </div>
-
-    <div class="w-11/12 lg:w-4/5 m-auto">
-    <div class="text-center my-6">
-      <div class="text-3xl font-bold">
-        2006 GSS Gwarinpa Set
-        <span class="text-sm text-gray-500"
-          >Web design by
-          <a class="underline" href="https://homeawayfromhome.online"
-            >Adamu</a
-          ></span
-        >
-      </div>
-		</div>
-		<form class="form relative">
+    <div class="inset-x-0 top-0 border-b-2 border-gray-200 lg:border-b-0 lg:static bg-green-700">
+    <div class="w-full w-11/12 lg:w-2xl mx-auto">
+      <div class="flex content-between w-5/6 m-auto items-center ">
+        <img class="w-24 h-24 -ml-16" src="./static/gss.png" />
+        <form class="form relative w-full mx-4">
         <div class="input-cancel-button flex">
 					<input id="search" class="transition text-4 bg-white shadow-md focus:outline-0 border border-transparent placeholder-gray-700 rounded-lg py-6 pr-4 pl-10 block w-full appearance-none leading-normal ds-input" type="text" placeholder="Look up names" autocomplete="off" spellcheck="false" dir="auto">			
         </input>
@@ -53,15 +36,37 @@
           <svg class="fill-current pointer-events-none text-gray-600 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path></svg>
         </div>
       </form>
+      <div class="-mr-16">
+        <a href="https://chat.whatsapp.com/invite/HBsEAfla1Ws4cMWMmF2s7y"
+          ><img src="./static/whatsapp.svg"
+        /></a>
+        </div>
+      </div>
+    </div>
+    </div>
 
-    <div class="json-container flex flex-wrap"></div>
+    <div class="w-11/12 lg:w-2xl m-auto">
+    <div class="text-center my-6">
+      <div class="text-3xl font-bold">
+        2006 GSS Gwarinpa Set
+        <span class="text-sm text-gray-500"
+          >Web design by
+          <a class="underline" href="https://homeawayfromhome.online"
+            >Adamu</a
+          ></span
+        >
+      </div>
+		</div>
+		
+
+    <div class="json-container flex flex-wrap content-between"></div>
     </div>
 
     <script id="template" type="text/x-handlebars-template">
       {{#each set}}
-      	<div class="set flex flex-wrap leading-normal lg:max-w-lg bg-white rounded shadow-md mx-auto m-4">
+      	<div class="set flex flex-wrap leading-normal lg:max-w-lg bg-white rounded shadow-md mx-auto my-4">
       		<div class="photo-column">
-      			<img class="min-w-full w-xl lg:w-md lg:h-md object-cover rounded" title="{{name}}" src="{{photo}}">
+      			<img class="min-w-full w-xl lg:w-md lg:h-sm object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
       		<div class="info-column text-5xl md:text-3xl px-6 py-4">
       			<div class="font-bold text-5xl md:text-3xl mb-2">{{name}} <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{class}}</span></div>
