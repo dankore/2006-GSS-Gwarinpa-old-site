@@ -23,6 +23,10 @@ request.onload = () => {
     return 0;
   });
   storeDataInArray.push(...data.set);
+
+  //Save data to local storage
+  localStorage.setItem("items", JSON.stringify(storeDataInArray));
+  localStorage.setItem("items2", JSON.stringify(data));
   render(data);
   //START(search): Get data from JSON file for search
 };
@@ -48,7 +52,7 @@ function displayMatches() {
 
         const name = item.name.replace(
           regex,
-          `<span class="underline">${this.value}</span>`
+          `<span class="underline text-red-400">${this.value}</span>`
         );
         const classOf = item.class.replace(
           regex,
@@ -60,6 +64,7 @@ function displayMatches() {
         <li  class="my-4">
         ${name}, ${classOf}
         </li>
+        <hr class="border-b border-gray-200"/>
       </ul>
       `;
       })
@@ -128,9 +133,11 @@ Handlebars.registerHelper("calculateUntillBirthDay", dob => {
   if (daysRemaining < 0) {
     return daysRemaining + 365 + " days to birthday";
   } else if (daysRemaining === 0) {
-    return "Today is birthday 🎂";
+    const birthDayIsToday = "Today is birthday 🎂";
+    return birthDayIsToday;
   } else {
-    return daysRemaining + " days to birthday";
+    const remaining = daysRemaining + " days to birthday";
+    return remaining;
   }
 });
 //ENDS: Calculate days till birthday
