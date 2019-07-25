@@ -150,6 +150,7 @@ const emptyInputBoxAndDisplayContainer = e => {
   input.value = "";
   displayContainer.innerHTML = "";
   displayContainer.classList.add("hidden");
+  cancelButton.classList.add("hidden");
   xIcon.style.display = "none";
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
