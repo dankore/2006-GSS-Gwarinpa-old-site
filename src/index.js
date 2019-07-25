@@ -64,7 +64,7 @@ function displayMatches() {
         <li  class="my-4">
         ${name}, ${classOf}
         </li>
-        <hr class="border-b border-gray-200"/>
+        <hr class="border-b border-gray-400"/>
       </ul>
       `;
       })
