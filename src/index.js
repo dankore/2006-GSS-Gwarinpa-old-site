@@ -35,42 +35,20 @@ request.send();
 const findMatches = (word, storeSearchContainer) => {
   return storeDataInArray.filter(item => {
     const regex = new RegExp(word, "gi");
-    return item.name.match(regex) || item.state.match(regex);
+    return (
+      item.name.match(regex) ||
+      item.state.match(regex) ||
+      item.dob.match(regex) ||
+      item.class.match(regex) ||
+      item.occupation.match(regex)
+    );
   });
 };
 
 //CONTINUE(search): Display matches
-const displayContainer = document.querySelector("#search-display");
-
 function displayMatches() {
-  if (input.value === "") {
-    displayContainer.innerHTML = ``;
-  } else {
-    const html = findMatches(this.value, storeDataInArray)
-      .map(item => {
-        const regex = new RegExp(this.value, "gi");
-
-        const name = item.name.replace(
-          regex,
-          `<span class="underline text-red-400">${this.value}</span>`
-        );
-        const classOf = item.class.replace(
-          regex,
-          `<span class="underline">${this.value}</span>`
-        );
-
-        return `
-      <ul>
-        <li  class="my-4">
-        ${name}, ${classOf}
-        </li>
-        <hr class="border-b border-gray-400"/>
-      </ul>
-      `;
-      })
-      .join("");
-    displayContainer.innerHTML = html;
-  }
+  let filteredProfiles = findMatches(input.value);
+  render({ set: filteredProfiles });
 }
 const input = document.querySelector("#search");
 input.addEventListener("input", displayMatches);
@@ -83,7 +61,7 @@ const render = myData => {
   const generatedHtml = compiled(myData);
   const jsonContainerinHtml = document.querySelector(".json-container");
 
-  jsonContainerinHtml.innerHTML = generatedHtml;
+  jsonContainerinHtml.innerHTML = generatedHtml || "hi";
 };
 //END: Get data from JSON file and render to browser
 
@@ -148,10 +126,9 @@ const cancelButton = document.querySelector(".cancel-button");
 const emptyInputBoxAndDisplayContainer = e => {
   e.preventDefault();
   input.value = "";
-  displayContainer.innerHTML = "";
-  displayContainer.classList.add("hidden");
   cancelButton.classList.add("hidden");
   xIcon.style.display = "none";
+  displayMatches(" ");
 };
 cancelButton.addEventListener("click", emptyInputBoxAndDisplayContainer);
 
@@ -160,12 +137,10 @@ const displayCancelButton = () => {
   if (input.value === "") {
     cancelButton.classList.add("hidden");
     xIcon.style.display = "none";
-    displayContainer.classList.add("hidden");
   } else {
     xIcon.style.display = "block";
     cancelButton.classList.remove("hidden");
     cancelButton.classList.add("block");
-    displayContainer.classList.remove("hidden");
   }
 };
 input.addEventListener("input", displayCancelButton);
