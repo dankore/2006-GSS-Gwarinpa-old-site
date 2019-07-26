@@ -44,8 +44,6 @@
       </div>
     </div>
     </div>
-    <div id="search-display" class="bg-white min-h-full hidden pl-4 absolute w-full rounded-lg text-4xl" ></div>
-
 
     <div class="w-11/12 lg:w-2xl m-auto">
     <div class="text-center my-6">
@@ -67,7 +65,7 @@
 
     <script id="template" type="text/x-handlebars-template">
       {{#each set}}
-      	<div class="set flex flex-wrap leading-normal text-5xl md:text-3xl lg:max-w-lg bg-white rounded shadow-lg mx-auto my-4">
+      	<div id="{{name}}" class="set flex flex-wrap leading-normal text-5xl md:text-3xl lg:max-w-lg bg-white rounded shadow-lg mx-auto my-4">
       		<div class="photo-column">
       			<img class="min-w-full w-xl lg:w-md lg:h-sm object-cover rounded" title="{{name}}" src="{{photo}}">
       		</div>
