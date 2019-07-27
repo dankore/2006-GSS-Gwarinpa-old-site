@@ -2,7 +2,7 @@
 // Get data from JSON file stored in github.com
 const request = new XMLHttpRequest();
 
-request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json");
+request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
 
 const storeDataInArray = [];
 
