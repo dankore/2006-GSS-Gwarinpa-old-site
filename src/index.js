@@ -2,11 +2,9 @@
 // Get data from JSON file stored in github.com
 const request = new XMLHttpRequest();
 const jsonContainerinHtml = document.querySelector(".json-container");
-
-request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
-
 const storeDataInArray = [];
 
+request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
 request.onload = () => {
   // Error handling
   if (request.status < 200 && request.status > 400) {
@@ -42,6 +40,7 @@ request.onload = () => {
   }
 };
 request.send();
+
 // Search functionality begins
 const findMatches = searchedLetters => {
   return storeDataInArray.filter(item => {
@@ -70,7 +69,7 @@ const render = myData => {
 
   const compiled = Handlebars.compile(handleBarTemplate);
   const generatedHtml = compiled(myData);
-  jsonContainerinHtml.innerHTML = generatedHtml || "hi";
+  jsonContainerinHtml.innerHTML = generatedHtml;
 };
 //END: Get data from JSON file and render to browser
 
