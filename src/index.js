@@ -8,6 +8,7 @@ request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
 const storeDataInArray = [];
 
 request.onload = () => {
+  // Error handling
   if (request.status < 200 && request.status > 400) {
     jsonContainerinHtml.innerHTML =
       "Opps! The server did not honor the request. Please try again later or refresh the page.";
@@ -16,6 +17,7 @@ request.onload = () => {
         "Apologies! We connected to the server, but it returned an error. Check your internet connection and refresh the page or try again later.";
     };
   } else {
+    // Get JSON data and store in an object
     const data = JSON.parse(request.responseText);
 
     // sort by name
@@ -37,14 +39,13 @@ request.onload = () => {
     localStorage.setItem("items", JSON.stringify(storeDataInArray));
     localStorage.setItem("items2", JSON.stringify(data));
     render(data);
-    //START(search): Get data from JSON file for search
   }
 };
 request.send();
-//CONTINUE(search): Create the search method
-const findMatches = (word, storeSearchContainer) => {
+// Search functionality begins
+const findMatches = searchedLetters => {
   return storeDataInArray.filter(item => {
-    const regex = new RegExp(word, "gi");
+    const regex = new RegExp(searchedLetters, "gi");
     return (
       item.name.match(regex) ||
       item.state.match(regex) ||
@@ -55,7 +56,7 @@ const findMatches = (word, storeSearchContainer) => {
   });
 };
 
-//CONTINUE(search): Display matches
+//Search functionality ends
 function displayMatches() {
   let filteredProfiles = findMatches(input.value);
   render({ set: filteredProfiles });
