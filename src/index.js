@@ -1,34 +1,44 @@
 //START: Get data from JSON file and render to browse
 // Get data from JSON file stored in github.com
 const request = new XMLHttpRequest();
+const jsonContainerinHtml = document.querySelector(".json-container");
 
 request.open("GET", "https://dankore.github.io/gss-2006-json/2006.json", true);
 
 const storeDataInArray = [];
 
 request.onload = () => {
-  const data = JSON.parse(request.responseText);
+  if (request.status < 200 && request.status > 400) {
+    jsonContainerinHtml.innerHTML =
+      "Opps! The server did not honor the request. Please try again later or refresh the page.";
+    request.onerror = () => {
+      jsonContainerinHtml.innerHTML =
+        "Apologies! We connected to the server, but it returned an error. Check your internet connection and refresh the page or try again later.";
+    };
+  } else {
+    const data = JSON.parse(request.responseText);
 
-  // sort by name
-  data.set.sort(function(a, b) {
-    var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-    var nameB = b.name.toUpperCase(); // ignore upper and lowercase
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    // names must be equal
-    return 0;
-  });
-  storeDataInArray.push(...data.set);
+    // sort by name
+    data.set.sort(function(a, b) {
+      var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+      var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+    });
+    storeDataInArray.push(...data.set);
 
-  //Save data to local storage
-  localStorage.setItem("items", JSON.stringify(storeDataInArray));
-  localStorage.setItem("items2", JSON.stringify(data));
-  render(data);
-  //START(search): Get data from JSON file for search
+    //Save data to local storage
+    localStorage.setItem("items", JSON.stringify(storeDataInArray));
+    localStorage.setItem("items2", JSON.stringify(data));
+    render(data);
+    //START(search): Get data from JSON file for search
+  }
 };
 request.send();
 //CONTINUE(search): Create the search method
@@ -59,8 +69,6 @@ const render = myData => {
 
   const compiled = Handlebars.compile(handleBarTemplate);
   const generatedHtml = compiled(myData);
-  const jsonContainerinHtml = document.querySelector(".json-container");
-
   jsonContainerinHtml.innerHTML = generatedHtml || "hi";
 };
 //END: Get data from JSON file and render to browser
